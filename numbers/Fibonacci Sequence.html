@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence</title>
+</head>
+<body>
+    <script>
+        // Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number.
+
+        let n = prompt('Masukkan Angka');
+        // let a = 1;
+        // let b = 1;
+        // let c = a+b;
+        // let hold = 0;
+        // for (let i = 1; i <= value; i++) {
+        //     document.writeln('<p>');
+        //     if (i == 1) {
+        //         document.writeln(`iterasi ${i} = ${a}`);
+        //     }else if(i == 2) {
+        //         document.writeln(`iterasi ${i} = ${b}`);
+        //     } else {
+        //         let c = a+b;
+        //         document.writeln(`iterasi ${i} = ${c}`);
+        //         a = b;
+        //         b = c;
+        //     }
+        //     document.writeln('</p>');
+        // }
+
+        let fibo = [1];
+        let counter = 1;
+        // while (counter < n) {
+        //     if (counter == 1) {
+        //         fibo.push(1);
+        //         counter++;
+        //     } else {
+        //         fibo.push(fibo[counter-2] + fibo[counter-1]);
+        //         counter++;
+        //     }
+        // }
+
+        function fibonacci(counter) {
+            if (n > 0) {
+                if (counter < n) {
+                if (counter == 1) {
+                    fibo.push(1);
+                    counter++;
+                    fibonacci(counter);
+                } else{
+                    fibo.push(fibo[counter-2] + fibo[counter-1]);
+                    counter++;
+                    fibonacci(counter);
+                }
+            } else {
+                return;
+            }
+            } else {
+                fibo[0] = "Jangan masukkan angka yang kurang dari 1";
+            }
+            
+
+        }
+
+        fibonacci(counter);
+
+        // for (const f of fibo) {
+        //     console.info(f);
+        // }
+
+        console.info(fibo);
+        
+    </script>
+</body>
+</html>
