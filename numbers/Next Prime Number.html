@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Prime Number</title>
+</head>
+<body>
+    <!-- Have the program find prime numbers until the user chooses to stop asking for the next one. -->
+
+    <script>
+        function isPrime(number){
+            let isPrime = true; 
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                }
+            }
+            return isPrime;
+        }
+        let primeNumber = 2;
+        let arrayPrimeNumber =[];
+        arrayPrimeNumber.push(primeNumber);
+        let next = true;
+        do {
+            next = confirm(`${arrayPrimeNumber} \nNext prime number?`);
+            primeNumber++;
+            while (!isPrime(primeNumber)) {
+                primeNumber++;
+            }
+            arrayPrimeNumber.push(primeNumber);
+        } while (next);
+        
+    </script>
+</body>
+</html>
