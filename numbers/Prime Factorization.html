@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Factorization</title>
+</head>
+<body>
+    <!-- Have the user enter a number and find all Prime Factors (if there are any) and display them. -->
+    <script>
+        function isPrime(number){
+            let status = true;
+            if (number == 1) {
+                status = false;
+            }
+            for(let i = 2; i < number; i++){
+                if (number % i == 0) {
+                    status = false;
+                }
+            }
+            return status;
+        }
+        
+        function factorize(number) {
+            let factor = [];
+            for (let i = 1; i <= number; i++) {
+                if (number % i == 0) {
+                    factor.push(i);
+                }
+            }
+            return factor;
+        }
+
+        let number = prompt('find prime factor from number:');
+        primeFactor = factorize(number).filter(value => isPrime(value));
+        document.writeln(primeFactor);
+    </script>
+</body>
+</html>
