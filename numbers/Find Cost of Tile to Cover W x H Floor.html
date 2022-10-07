@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Cost of Tile to Cover W x H Floor</title>
+</head>
+<body>
+    <!-- Calculate the total cost of tile it would take to cover a floor plan of width and height, using a cost entered by the user. -->
+    <script>
+        let tileCost, height, width, tileMetre;
+        tileCentiMetre = prompt('Berapa cm kuadrat ukuran ubin?');
+        tileMetre = tileCentiMetre / 100;
+        tileCost = prompt('Berapa harga satu ubin?');
+        height = prompt('berapa panjang ruangan Anda (satuan meter)?');
+        width = prompt('berapa lebar ruangan Anda (satuan meter)?');
+        let costTotal = Math.ceil( (height * width) / tileMetre) * tileCost;
+        console.info(tileCentiMetre);
+        console.info(tileMetre);
+        console.info(costTotal);
+        document.writeln(`Untuk ruangan dengan luas ${height*width}m<sup>2</sup> Anda memerlukan biaya sebesar Rp${costTotal.toLocaleString('id-ID')}`);
+        
+    </script>
+</body>
+</html>
